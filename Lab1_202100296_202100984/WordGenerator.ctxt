@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=WordGenerator
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ WordGenerator\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WordGenerator\ here.\r\n\r\n\ @author\ 202100296\ e\ 202100984\r\n\ @version\ 10/03/2022\r\n
 comment1.params=
 comment1.target=WordGenerator()
 comment2.params=
@@ -8,5 +8,5 @@ comment2.target=void\ fillArrayList()
 comment3.params=
 comment3.target=void\ generateWord()
 comment4.params=
-comment4.target=void\ addWord()
+comment4.target=java.lang.String\ addWord()
 numComments=5

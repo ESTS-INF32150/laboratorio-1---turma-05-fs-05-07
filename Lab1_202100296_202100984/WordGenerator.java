@@ -3,8 +3,8 @@ import java.util.Random;
 /**
  * Write a description of class WordGenerator here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author 202100296 e 202100984
+ * @version 10/03/2022
  */
 public class WordGenerator
 {
@@ -18,7 +18,7 @@ public class WordGenerator
         generateWord();
     }
     
-    private void fillArrayList(){
+    public void fillArrayList(){
         words.add("boolean");
         words.add("break");
         words.add("byte");
@@ -41,7 +41,7 @@ public class WordGenerator
         word = rand.nextInt(15);
     }
     
-    public void addWord(){
-        System.out.println(words.get(word));
+    public String addWord(){
+        return words.get(word);
     }
 }
