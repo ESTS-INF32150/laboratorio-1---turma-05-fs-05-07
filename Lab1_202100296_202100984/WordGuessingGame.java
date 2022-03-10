@@ -10,16 +10,48 @@ public class WordGuessingGame
     private String hiddenWord;
     private String guessedWord;
     private int numberOfTries;
+    private InputReader reader;
     
     public WordGuessingGame()
     {
        hiddenWord = "abc";
        guessedWord = "___"; 
        numberOfTries = 0;
+       reader = new InputReader();
     }
     
-    public void showGuessedWord(){
+    private void showGuessedWord(){
         System.out.println("Palavra a ser adivinhada: "+hiddenWord);
+    }
+    
+    public void play(){
+        showWelcome();
+        do{
+            guess();
+        }while(guessedWord.contains("_"));
+        
+    }
+    
+    private void showWelcome(){
+        System.out.println("   ***Bem-vindo ao jogo da forca***\n");
+        System.out.println(guessedWord);
+    }
+    
+    private void guess(){
+        char letter = reader.getChar("Apresente uma letra: ");
+        String newString = "";
+        for(int i = 0; i < hiddenWord.length(); i++){
+            if(hiddenWord.charAt(i) == letter){
+                newString = guessedWord.substring(0, i) + letter + guessedWord.substring(i+1);
+            }
+            numberOfTries++;
+        }
+        guessedWord = newString;
+        System.out.println(guessedWord);
+    }
+    
+    private void showResult(){
+         System.out.println("Parabéns acertou a palavra em "+numberOfTries);
     }
     
     public String getHiddenWord(){ return hiddenWord; }
