@@ -20,16 +20,25 @@ public class WordGuessingGame
        reader = new InputReader();
     }
     
-    private void showGuessedWord(){
-        System.out.println("Palavra a ser adivinhada: "+hiddenWord);
+    /*private void guessedWord(){
+        char blank = '_';
+
+        for(int i = 0; i < guessedWord.length();i++){
+            hiddenWord += blank;
+        }
+ 
     }
+       */ 
+    
     
     public void play(){
         showWelcome();
+        //guessedWord();
         do{
             guess();
+            numberOfTries++;
         }while(guessedWord.contains("_"));
-        
+        showResult();
     }
     
     private void showWelcome(){
@@ -43,11 +52,14 @@ public class WordGuessingGame
         for(int i = 0; i < hiddenWord.length(); i++){
             if(hiddenWord.charAt(i) == letter){
                 newString = guessedWord.substring(0, i) + letter + guessedWord.substring(i+1);
+                guessedWord = newString;
             }
-            numberOfTries++;
         }
-        guessedWord = newString;
         System.out.println(guessedWord);
+    }
+    
+    private void showGuessedWord(){
+        System.out.println("Palavra a ser adivinhada: "+hiddenWord);
     }
     
     private void showResult(){
